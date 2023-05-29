@@ -1,17 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurante</title>
+  <!-- Enlace a Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- Estilos personalizados -->
+  <style>
+    body {
+      padding-top: 60px;
+    }
+    .jumbotron {
+      text-align: center;
+    }
+    .menu-item {
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
+<script src="js/segundaPrentregaHernandezFragosoMartin.js"></script>
 <body>
-    <div class="contenido">
-        <h1>JavaScript CoderHouse</h1>
-        <p>Martín Hernández Fragoso</p>
-        <p>Pre entrega 1: Restaurante</p>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Restaurante</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#menu">Menú</a>
+        </li>
+      </ul>
     </div>
-    <script src="js/primeraPre-entrega.js"></script>
-</body>
-</html>
+  </nav>
+  
+  <!-- Sección de introducción -->
+  <div class="jumbotron">
+    <h1 class="display-4">¡Bienvenido a restaurante Tres Guerras!</h1>
+    <p class="lead">Disfruta de nuestra deliciosa comida en un ambiente acogedor.</p>
+  </div>
+  
+  <!-- Menú -->
+  <section id="menu" class="container">
+    <h2>Menú</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="menu-item">
+          <h3>1.Sandwich de pavo........$15.00</h3>
+          <p>Delicioso sandwich con pan reien horneado y pechuga de pollo crujiente con el sazon de la casa.</p>
+        </div>
+        <div class="menu-item">
+          <h3>2.Sandwich de atun........$10.00</h3>
+          <p>Irresistible sandwich con pan blanco fresco y nuestra preparacion con atun y nuetro famoso aderezo.</p>
+        </div>
+        <div class="menu-item">
+          <h3>3.Hamburguesa.........$30.00</h3>
+          <p>Dos piezas de carne 100% de res asada a la parrilla, salsa BBQ, rebanadas de tocino, queso americano y aros de cebolla empanizados.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="menu-item">
+          <h3>4.Pizza...................$50.00</h3>
+          <p>Elaborada con salsa bbq Texas, queso 100% mozzarella, carne vacuno, pollo parrilla, bacón y bacón crispy y drizzel de bbq on top. Con un toque crujiente de cheddar en el borde. Simplemente deliciosa....</p>
+        </div>
+        <div class="menu-item">
+          <h3>5.Pollo Adobado...........$45.00</h3>
+          <p>Una deliciosa combinación de chiles secos y notas cítricas, tiene un color llamativo rojo intenso y tiene una textura extra crujiente. Los sabores intensos con colores llamativos son tendencia mundial</p>
+        </div>
+        <div class="menu-item">
+          <h3>6.Filete Rib Eye..........$70.00</h3>
+          <p>Rib Eye es un corte de carne muy popular debido a su suavidad y delicioso sabor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
