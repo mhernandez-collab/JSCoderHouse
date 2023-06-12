@@ -1,81 +1,93 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurante</title>
-  <!-- Enlace a Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <!-- Estilos personalizados -->
-  <style>
-    body {
-      padding-top: 60px;
-    }
-    .jumbotron {
-      text-align: center;
-    }
-    .menu-item {
-      margin-bottom: 20px;
-    }
-  </style>
-</head>
-<script src="js/segundaPrentregaHernandezFragosoMartin.js"></script>
-<body>
-  <!-- Barra de navegación -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Restaurante</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#menu">Menú</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  
-  <!-- Sección de introducción -->
-  <div class="jumbotron">
-    <h1 class="display-4">¡Bienvenido a restaurante Tres Guerras!</h1>
-    <p class="lead">Disfruta de nuestra deliciosa comida en un ambiente acogedor.</p>
-  </div>
-  
-  <!-- Menú -->
-  <section id="menu" class="container">
-    <h2>Menú</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="menu-item">
-          <h3>1.Sandwich de pavo........$15.00</h3>
-          <p>Delicioso sandwich con pan reien horneado y pechuga de pollo crujiente con el sazon de la casa.</p>
-        </div>
-        <div class="menu-item">
-          <h3>2.Sandwich de atun........$10.00</h3>
-          <p>Irresistible sandwich con pan blanco fresco y nuestra preparacion con atun y nuetro famoso aderezo.</p>
-        </div>
-        <div class="menu-item">
-          <h3>3.Hamburguesa.........$30.00</h3>
-          <p>Dos piezas de carne 100% de res asada a la parrilla, salsa BBQ, rebanadas de tocino, queso americano y aros de cebolla empanizados.</p>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>FreakShop</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-light bg-dark min-vw-100">
+        <h2 class="p-3 text-white">FreakShop: Tus juegos favoritos al mejor precio</h2>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a
+              class="nav-link text-white"
+              data-bs-toggle="modal"
+              data-bs-target="#modal"
+            >
+              <i class="bi bi-cart mx-5" id="carritoContenedor">0</i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="row mt-5" id="contenedor"></div>
+    </main>
+    
+
+    <div class="container-xl">
+      <div class="modal" tabindex="-1" role="dialog" id="modal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Carrito</h5>
+              <button
+                type="button"
+                class="close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" id="vaciarCarrito">
+                Vaciar carrito
+              </button>
+              <button type="button" id="procesarCompra" class="btn btn-primary">
+                Continuar compra
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+
+              <span>Precio total:</span>
+              <p class="text-center" id="precioTotal"></p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="menu-item">
-          <h3>4.Pizza...................$50.00</h3>
-          <p>Elaborada con salsa bbq Texas, queso 100% mozzarella, carne vacuno, pollo parrilla, bacón y bacón crispy y drizzel de bbq on top. Con un toque crujiente de cheddar en el borde. Simplemente deliciosa....</p>
-        </div>
-        <div class="menu-item">
-          <h3>5.Pollo Adobado...........$45.00</h3>
-          <p>Una deliciosa combinación de chiles secos y notas cítricas, tiene un color llamativo rojo intenso y tiene una textura extra crujiente. Los sabores intensos con colores llamativos son tendencia mundial</p>
-        </div>
-        <div class="menu-item">
-          <h3>6.Filete Rib Eye..........$70.00</h3>
-          <p>Rib Eye es un corte de carne muy popular debido a su suavidad y delicioso sabor.</p>
-        </div>
-      </div>
     </div>
-  </section>
+
+    <script src="app.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
