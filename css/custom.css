@@ -1,0 +1,140 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  background-image: url(../img/back.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  font-weight: bold;
+  font-size: 4rem;
+  color: rgb(212, 0, 255);
+}
+h4 {
+  font-size: 16px;
+  font-weight: 700;
+}
+header {
+  padding: 20px 0 0 0;
+  background: rgb(53, 10, 84);
+  text-align: center;
+}
+@media (min-width: 750px) {
+  header {
+    text-align: left;
+  }
+}
+ul {
+  list-style: none;
+}
+#header {
+  background-image: url(../img/logo.jpg);
+  background-position: left top;
+  background-repeat: no-repeat;
+  height: 30px;
+}
+#lista-productos {
+  color: rgb(255, 255, 255);
+}
+#lista-carrito img {
+  width: 200px;
+  height: auto;
+}
+
+#row {
+  background-image: url(../img/cart.png);
+  background-position: right top;
+  background-repeat: no-repeat;
+  height: 5px;
+}
+
+#hero {
+  background-image: url(../img/banner.jpg);
+  height: 350px;
+  background-size: cover;
+  text-align: left;
+}
+#encabezado {
+  margin: 30px 0;
+}
+
+.submenu {
+  position: relative;
+}
+
+.submenu #carrito {
+  display: none;
+  min-height: 500px;
+}
+.submenu:hover #carrito {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 65%;
+  z-index: 1;
+  background-color: rgba(136, 1, 247, 0.918);
+  padding: 20px;
+  min-height: 400px;
+  min-width: 300px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-shadow: 0 0 5px rgb(224, 2, 253), 0 0 10px rgb(224, 2, 253),
+    0 0 20px rgb(224, 2, 253), 0 0 30px rgb(224, 2, 253);
+}
+
+.contenido-hero {
+  margin-left: auto;
+  margin-top: 80px;
+  color: rgb(237, 1, 245);
+}
+.card-container {
+  width: 300px;
+  height: 400px;
+  margin: 10px;
+  display: inline-block;
+}
+
+.card {
+  text-align: left;
+  border: 1px solid #6b05f8;
+  background: rgba(147, 7, 247, 0.823);
+}
+@media (min-width: 550px) {
+  .card {
+    text-align: left;
+  }
+}
+.info-card {
+  padding: 10px 20px;
+}
+.info-card img {
+  width: 100%;
+  display: block;
+}
+.info-card .img {
+  width: 100%;
+  height: 200px; /* Ajusta la altura deseada */
+  object-fit: cover;
+}
+.info-card p,
+.card h4 {
+  margin-bottom: 5px;
+}
+.info-card .precio {
+  font-size: 18px;
+  margin-top: 10px;
+}
+@keyframes neon-glow {
+  from {
+    text-shadow: 0 0 5px rgb(224, 2, 253), 0 0 10px rgb(224, 2, 253),
+      0 0 20px rgb(224, 2, 253), 0 0 30px rgb(224, 2, 253);
+  }
+  to {
+    text-shadow: 0 0 10px rgb(224, 2, 253), 0 0 20px rgb(224, 2, 253),
+      0 0 30px rgb(224, 2, 253), 0 0 40px rgb(224, 2, 253);
+  }
+}

@@ -2,92 +2,63 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
-    />
-
-    <link rel="stylesheet" href="estilos.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-
-    <title>FreakShop</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>GameSpot - Proyecto Final</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/skeleton.css" />
+    <link rel="stylesheet" href="css/custom.css" />
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-light bg-dark min-vw-100">
-        <h2 class="p-3 text-white">FreakShop: Tus juegos favoritos al mejor precio</h2>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a
-              class="nav-link text-white"
-              data-bs-toggle="modal"
-              data-bs-target="#modal"
-            >
-              <i class="bi bi-cart mx-5" id="carritoContenedor">0</i>
-            </a>
-          </li>
-        </ul>
-      </nav>
+    <header id="header" class="header">
+      <div class="container">
+        <div class="row">
+          <div class="two.columns u-pull-right">
+            <ul>
+              <li class="submenu">
+                <img src="img/cart.png" id="img-carrito" />
+                <div id="carrito">
+                  <table id="lista-carrito" class="u-full-width">
+                    <thead>
+                      <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                  <p id="total-carrito" class="total-carrito"></p>
+                  <a id="boton-compra" class="button u-full-width"
+                    >Realizar Compra</a
+                  >
+                  <a id="vaciar-carrito" class="button u-full-width"
+                    >Vaciar Carrito</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </header>
-    <main>
-      <div class="row mt-5" id="contenedor"></div>
-    </main>
-    
 
-    <div class="container-xl">
-      <div class="modal" tabindex="-1" role="dialog" id="modal">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Carrito</h5>
-              <button
-                type="button"
-                class="close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body"></div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" id="vaciarCarrito">
-                Vaciar carrito
-              </button>
-              <button type="button" id="procesarCompra" class="btn btn-primary">
-                Continuar compra
-              </button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Cerrar
-              </button>
-
-              <span>Precio total:</span>
-              <p class="text-center" id="precioTotal"></p>
-            </div>
+    <div id="hero">
+      <div class="container">
+        <div class="row">
+          <div class="four columns">
+            <h2>GameSpot</h2>
+            <h2>Todo lo que necesitas para potenciar tu nivel Gamer</h2>
           </div>
         </div>
       </div>
     </div>
 
-    <script src="app.js"></script>
-    <script src="bootstrap.bundle.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <div id="lista-productos">
+      <h1 id="encabezado" class="encabezado">Productos Disponibles</h1>
+    </div>
+    <script src="js/app.js"></script>
   </body>
 </html>
