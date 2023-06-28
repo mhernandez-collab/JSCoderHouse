@@ -1,17 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet"> 
-</head>
-<body>
-    <div class="contenido">
-        <h1>JavaScript CoderHouse</h1>
-        <p>Martín Hernández Fragoso</p>
-        <p>Pre entrega 1: Restaurante</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>GameSpot - Proyecto Final</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/skeleton.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+  </head>
+  <body>
+    <header id="header" class="header">
+      <div class="container">
+        <div class="row">
+          <div class="two.columns u-pull-right">
+            <ul>
+              <li class="submenu">
+                <img src="img/cart.png" id="img-carrito" />
+                <div id="carrito">
+                  <table id="lista-carrito" class="u-full-width">
+                    <thead>
+                      <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                  <p id="total-carrito" class="total-carrito"></p>
+                  <a id="boton-compra" class="button u-full-width"
+                    >Realizar Compra</a
+                  >
+                  <a id="vaciar-carrito" class="button u-full-width"
+                    >Vaciar Carrito</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="hero">
+      <div class="container">
+        <div class="row">
+          <div class="four columns">
+            <h2>GameSpot</h2>
+            <h2>Todo lo que necesitas para potenciar tu nivel Gamer</h2>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="js/primeraPre-entrega.js"></script>
-</body>
+
+    <div id="lista-productos">
+      <h1 id="encabezado" class="encabezado">Productos Disponibles</h1>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
 </html>
