@@ -11,35 +11,67 @@
 //      {id:8, nombre: "Tarjeta Gráfica", marca: "Nvidia", img: "img/nvidia.jpg", precio: 12000, descripcion:"Tarjeta Gráfica para alto rendimiento"},
 //    ];
 
+// Se elimina fetch
+// const cargarProductos = async () => {
+//   try {
+//     const response = await fetch("https://apimocha.com/gamespot/posts");
+//     const data = await response.json();
+//     productos = data;
+//     productos.forEach((item) => {
+//       const productCard = document.createElement("div");
+//       productCard.className = "five columns";
+//       productCard.innerHTML = `
+//               <div class="card">
+//                 <div class="info-card">
+//                   <h4>${item.nombre}</h4>
+//                   <img class='img' src="${item.img}">
+//                   <p>${item.marca}</p>
+//                   <p class="precio">$${item.precio}</p>
+//                   <p>${item.descripcion} </p>
+//                   <a class="u-full-width button-primary button input agregar-carrito" data-id="${item.id}">Agregar Al Carrito</a>
+//                 </div>
+//               </div> 
+//           `;
+//       listaProducts.appendChild(productCard);
+//       actualizarCarritoHTML();
+//     });
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+
 let productos = [];
 
+//Utilizacion de Libreria Axios
 const cargarProductos = async () => {
   try {
-    const response = await fetch("https://apimocha.com/gamespot/posts");
-    const data = await response.json();
-    productos = data;
-    productos.forEach((item) => {
-      const productCard = document.createElement("div");
-      productCard.className = "five columns";
-      productCard.innerHTML = `
-              <div class="card">
-                <div class="info-card">
-                  <h4>${item.nombre}</h4>
-                  <img class='img' src="${item.img}">
-                  <p>${item.marca}</p>
-                  <p class="precio">$${item.precio}</p>
-                  <p>${item.descripcion} </p>
-                  <a class="u-full-width button-primary button input agregar-carrito" data-id="${item.id}">Agregar Al Carrito</a>
-                </div>
-              </div> 
-          `;
-      listaProducts.appendChild(productCard);
-      actualizarCarritoHTML();
-    });
+    const response = await axios.get("https://apimocha.com/gamespot/posts");
+    if(response.status === 200){
+      productos = response.data;
+      productos.forEach((item) => {
+        const productCard = document.createElement("div");
+        productCard.className = "five columns";
+        productCard.innerHTML = `
+                <div class="card">
+                  <div class="info-card">
+                    <h4>${item.nombre}</h4>
+                    <img class='img' src="${item.img}">
+                    <p>${item.marca}</p>
+                    <p class="precio">$${item.precio}</p>
+                    <p>${item.descripcion} </p>
+                    <a class="u-full-width button-primary button input agregar-carrito" data-id="${item.id}">Agregar Al Carrito</a>
+                  </div>
+                </div> 
+            `;
+        listaProducts.appendChild(productCard);
+        actualizarCarritoHTML();
+      });
+    }
   } catch (error) {
     console.error(error);
   }
 };
+
 
 const carrito = document.querySelector("#carrito");
 const listaProducts = document.querySelector("#lista-productos");
@@ -76,7 +108,7 @@ function obtenerDatosProducto(producto) {
     nombre: producto.querySelector("h4").textContent,
     precio: parseInt(
       producto.querySelector(".precio").textContent.substring(1)
-    ), // Eliminar el símbolo de dólar ($)
+    ),
   };
   agregarAlCarrito(productoAgregado);
 }
@@ -184,9 +216,17 @@ function guardarCarritoLocalStorage() {
 
 function evaluarCarrito() {
   if (articulosCarrito.length === 0) {
-    alert(
-      "Tu carrito está vacío. Agrega productos antes de realizar la compra."
-    );
+    Swal.fire({
+      icon: "error",
+      title: "Tu carrito está vacío!",
+      text: "Agrega productos para realizar una compra",
+      customClass: {
+        popup: "swal2-popup-custom",
+        title: "swal2-title-custom",
+        content: "swal2-content-custom",
+        confirmButton: "swal2-confirm-button-custom",
+      },
+    });
   } else {
     location.href = "form.html";
   }
